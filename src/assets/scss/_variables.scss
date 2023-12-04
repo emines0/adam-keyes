@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+// Fonts
+$fontFamily: 'Space Grotesk', sans-serif;
+$fontSize: 16px;
+$fontSmall: 13px;
+
+// Colors
+$primaryColor: hsla(0, 0%, 8%, 1);
+$secondaryColor: hsla(154, 71%, 59%, 1);
+$darkColor: hsla(0, 0%, 14%, 1);
+$greyColor: hsla(0, 0%, 85%, 1);
+$whiteColor: hsl(0, 0%, 100%);
+
+// Breakpoints
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1100px;
