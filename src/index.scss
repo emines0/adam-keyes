@@ -1,5 +1,6 @@
 /* Font */
 @import './assets/scss/variables';
+@import './assets/scss/mixins';
 @import './assets/scss/utilities';
 
 /* Generals */
@@ -7,9 +8,12 @@
   box-sizing: border-box;
 }
 
+#root {
+  gap: 0rem !important;
+}
+
 body {
   background: $primaryColor;
-  position: relative;
   font-family: $fontFamily;
   color: $whiteColor;
   font-size: $fontSize;
@@ -17,6 +21,7 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 #root {
@@ -45,3 +50,49 @@ li {
 img {
   width: 100%;
 }
+
+h1,
+h2,
+h3,
+p,
+a,
+button,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  font-size: $fontSize;
+  font-family: $fontFamily;
+}
+
+p {
+  font-size: $fontMedium;
+  line-height: $lineHeightMedium;
+  color: $greyColor;
+}
+
+h1 {
+  font-size: $headingFontXLarge;
+  line-height: $headingLineHeightXLarge;
+  letter-spacing: $headingLetterSpacingXLarge;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: $headingFontLarge;
+  line-height: $headingLineHeightLarge;
+  letter-spacing: $headingLetterSpacingLarge;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: $headingFontMedium;
+  line-height: $headingLineHeightMedium;
+  font-weight: 700;
+}
+
+@import './assets/scss/components/hero';
+@import './assets/scss/components/skills';
+@import './assets/scss/components/projects';
+@import './assets/scss/components/contact';
+@import './assets/scss/components/footer';

@@ -1,0 +1,12 @@
+#footer {
+  @include flex(column, center, center);
+  background: $darkColor;
+}
+
+@media (min-width: $tablet) {
+  #footer {
+    .box {
+      margin-top: 1.5rem;
+    }
+  }
+}

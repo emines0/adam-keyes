@@ -1,0 +1,148 @@
+#hero {
+  @include flex(column, center, center, 0rem);
+  position: relative;
+
+  .box.photo {
+    width: 174px;
+    height: 100%;
+    transform: translateY(-100px);
+    img {
+      z-index: 10;
+    }
+  }
+
+  .box.hero-text {
+    transform: translateY(-60px);
+    @include flex(column, center, center, 1.5rem);
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 40px;
+      letter-spacing: -1.333px;
+
+      span {
+        border-bottom: 4px solid $secondaryColor;
+      }
+    }
+  }
+
+  .circle {
+    width: 40%;
+    height: 100%;
+    z-index: -1;
+    top: 20%;
+    right: -20%;
+  }
+
+  .rings {
+    width: 150%;
+    height: 100%;
+    z-index: -1;
+    top: 3%;
+    left: -105%;
+  }
+}
+
+@media (min-width: $tablet) {
+  #hero {
+    @include flex(row-reverse, center, center, 0rem);
+
+    .box.photo {
+      width: 78%;
+      height: 100%;
+      transform: translate(3px, -100px);
+      img {
+        z-index: 1;
+      }
+    }
+
+    .box.hero-text {
+      @include flex(column, flex-start, flex-start, 2.5rem);
+      transform: translateY(-30px);
+      text-align: left;
+      padding: 0 0 0 2rem;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 80px;
+        letter-spacing: -2.045px;
+      }
+
+      p {
+        margin-top: 0.8rem;
+      }
+    }
+    .circle {
+      width: 18%;
+      height: 100%;
+      z-index: 3;
+      top: 60%;
+      right: -9%;
+    }
+
+    .rings {
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: -2%;
+      left: -65%;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  #hero {
+    padding: 0;
+
+    .box.photo {
+      width: 60%;
+      height: 100%;
+      transform: translate(5px, -95px);
+      img {
+        z-index: 1;
+      }
+    }
+
+    .box.hero-text {
+      @include flex(column, flex-start, flex-start, 2.5rem);
+      transform: translateY(-100px);
+      text-align: left;
+
+      h1 {
+        font-size: 5rem;
+        line-height: 88px;
+        letter-spacing: -2.5px;
+
+        span {
+          border-bottom: 4px solid $secondaryColor;
+        }
+      }
+
+      p {
+        width: 60%;
+        margin: 0.8rem 0 1.5rem 0;
+      }
+    }
+    .circle {
+      width: 8%;
+      right: 32%;
+    }
+
+    .rings {
+      width: 50%;
+      height: 100%;
+      z-index: -1;
+      top: 5%;
+      left: -25%;
+    }
+  }
+}
+
+@media (min-width: $desktopL) {
+  #hero {
+    .rings {
+      display: none;
+    }
+  }
+}

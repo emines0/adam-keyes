@@ -1,0 +1,111 @@
+#projects {
+  .box {
+    margin: 2rem 0;
+    @include flex(row, center, space-between);
+    h2 {
+      font-weight: 500;
+      font-size: 2.5rem;
+    }
+  }
+
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .project-item {
+      @include flex(column, flex-start, center);
+      position: relative;
+
+      text-transform: uppercase;
+
+      h3 {
+        font-weight: 500;
+        line-height: 133.33%;
+        margin: 1.25rem 0 0.75rem 0;
+      }
+
+      .tags {
+        display: flex;
+        gap: 1.125rem;
+        p {
+          font-size: 1.125rem;
+          margin: 0;
+          color: $greyColor;
+        }
+        margin-bottom: 1.25rem;
+      }
+
+      .links.small {
+        @include flex(row, flex-start, flex-start, 1.25rem);
+
+        a {
+          color: $whiteColor;
+          border-bottom: 2px solid $secondaryColor;
+          margin-bottom: 0.625rem;
+        }
+      }
+
+      .links.large {
+        opacity: 0;
+        @include flex(column, center, center, 2rem);
+        background: rgba($color: #000000, $alpha: 0.8);
+        width: 555px;
+        height: 414px;
+        // background: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -64%);
+        margin-bottom: 0;
+        transition: all 0.2s ease-in-out;
+
+        a {
+          color: $whiteColor;
+          border-bottom: 2px solid $secondaryColor;
+          margin-bottom: 0.625rem;
+          transition: color 0.3s ease-in;
+          &:hover {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  #projects {
+    .box {
+      h2 {
+        font-size: 3rem;
+      }
+    }
+    .projects-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  #projects {
+    .box {
+      h2 {
+        font-size: 4.5rem;
+      }
+    }
+    .projects-container {
+      .project-item {
+        .thumbnail {
+          position: relative;
+          cursor: pointer;
+        }
+
+        .thumbnail:hover ~ .links.large,
+        .links.large:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
